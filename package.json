@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js",
-    "frontend": "npm start --prefix frontend"
+    "backend": "nodemon backend/server.js",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run backend\" \" npm run frontend \""
   },
   "author": "Fady G Andrawes",
   "license": "MIT",
@@ -20,6 +21,7 @@
     "mongoose": "^8.4.0"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "nodemon": "^3.1.0"
   }
 }
